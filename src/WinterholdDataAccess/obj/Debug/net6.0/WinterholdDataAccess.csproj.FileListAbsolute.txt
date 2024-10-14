@@ -1,0 +1,14 @@
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdDataAccess\bin\Debug\net6.0\WinterholdDataAccess.deps.json
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdDataAccess\bin\Debug\net6.0\WinterholdDataAccess.runtimeconfig.json
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdDataAccess\bin\Debug\net6.0\WinterholdDataAccess.dll
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdDataAccess\bin\Debug\net6.0\WinterholdDataAccess.pdb
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdDataAccess\obj\Debug\net6.0\WinterholdDataAccess.csproj.AssemblyReference.cache
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdDataAccess\obj\Debug\net6.0\WinterholdDataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdDataAccess\obj\Debug\net6.0\WinterholdDataAccess.AssemblyInfoInputs.cache
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdDataAccess\obj\Debug\net6.0\WinterholdDataAccess.AssemblyInfo.cs
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdDataAccess\obj\Debug\net6.0\WinterholdDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdDataAccess\obj\Debug\net6.0\WinterholdDataAccess.dll
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdDataAccess\obj\Debug\net6.0\refint\WinterholdDataAccess.dll
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdDataAccess\obj\Debug\net6.0\WinterholdDataAccess.pdb
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdDataAccess\obj\Debug\net6.0\WinterholdDataAccess.genruntimeconfig.cache
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdDataAccess\obj\Debug\net6.0\ref\WinterholdDataAccess.dll

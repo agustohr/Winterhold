@@ -1,0 +1,274 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+  
+nav {
+  background-color: #070F2B;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+nav a:hover{
+  color: #535C91;
+}
+
+main.main-landingpage {
+  padding: 2em;
+  text-align: center;
+  font-weight: 600;
+}
+
+main {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search {
+  padding: 10px;
+  width: fit-content;
+  border: 2px black solid;
+  border-radius: 5px;
+}
+
+.form-upsert {
+  display: flex;
+  justify-content: center;
+}
+.form-upsert form{
+  background-color: #9290C3;
+  padding: 20px;
+  border-radius: 10px;
+}
+.form-upsert form table{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-upsert form .foot-button{
+  display: flex;
+  gap: 10px;
+}
+
+.form-upsert td > label {
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+.form-upsert td > input, 
+.form-upsert td > textarea, 
+.form-upsert td > select, 
+.form-upsert td > span.field-catgeory {
+  width: 300px;
+  padding: 5px;
+  margin: 10px;
+}
+.form-upsert td > textarea {
+  padding-bottom: 60px;
+}
+
+span.field-validation-error {
+  width: 100px;
+  height: 50px;
+  background-color: red;
+  color: #fff;
+}
+
+#data-customers tr td a.membership-number{
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+#data-customers tr td a.membership-number:hover{
+  font-weight: 800;
+}
+
+a.black-button {
+  background-color: #1B1A55;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px;
+  /* margin: 10px; */
+  width: fit-content;
+}
+a.black-button:hover, button:hover{
+  background-color: #535C91;
+  color: #070F2B;
+}
+button {
+  background-color: #1B1A55;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+table.data {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+table.data thead, table.data tfoot {
+  background-color: #1B1A55;
+  color: #fff;
+}
+.data-empty{
+  display: flex;
+  justify-content: center;
+}
+
+table.data tbody tr td:nth-child(1) {
+  display: flex;
+  gap: 5px;
+}
+
+table.data th, table.data td {
+  text-align: left;
+  padding: 10px;
+}
+
+table.data tr:nth-child(even) {
+  background-color: #9290C3;
+  color: #fff;
+}
+
+table.detail {
+  display: flex;
+}
+table.detail tr td:nth-child(1){
+  font-weight: 600;
+}
+table.detail tr td {
+  padding-bottom: 10px;
+  /* width: 200px; */
+  padding-right: 15px;
+}
+
+div.pagination {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination .number {
+  text-decoration: none;
+  background-color: #9290C3;
+  color: #fff;
+  padding: 5px;
+  margin-left: 5px;
+}
+.pagination .number:hover{
+  background-color: #535C91;
+}
+
+div.modal-layer {
+  display:none; /*nanti setelah di-click akan jadi flex*/
+  align-items:center;
+  justify-content:center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  overflow: auto;
+}
+
+.popup-dialog {
+  display: none; /*nanti setelah di-click akan jadi block*/
+  background-color: #f2f2f2;
+  padding:20px;
+  border-radius:6px;
+  min-width:300px;
+  /* max-width: 500px; */
+}
+
+.content {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.content div{
+  border: 1px black solid;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+}
+  
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+svg {
+  width: 3.25em;
+  transform-origin: center;
+  animation: rotate4 2s linear infinite;
+ }
+ 
+ .loading {
+  display: grid;
+  position: fixed;
+  top: 50vh;
+  left: 100vh;
+ }
+
+ 
+ circle {
+  fill: none;
+  stroke: hsl(214, 97%, 59%);
+  stroke-width: 2;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash4 1.5s ease-in-out infinite;
+ }
+ 
+ @keyframes rotate4 {
+  100% {
+   transform: rotate(360deg);
+  }
+ }
+ 
+ @keyframes dash4 {
+  0% {
+   stroke-dasharray: 1, 200;
+   stroke-dashoffset: 0;
+  }
+ 
+  50% {
+   stroke-dasharray: 90, 200;
+   stroke-dashoffset: -35px;
+  }
+ 
+  100% {
+   stroke-dashoffset: -125px;
+  }
+ }

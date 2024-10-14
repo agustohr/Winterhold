@@ -1,0 +1,104 @@
+@model BookIndexViewModel
+@{
+    ViewData["Title"] = "Books Index";
+}
+<main>
+    <a asp-controller="Category" asp-action="Index" class="black-button">Back to Category</a>
+    <div class="search">
+        <div>Search By</div>
+        <form method="get" asp-action="Index">
+            <table>
+                <tr>
+                    <td>Title</td>
+                    <td><input asp-for="@Model.Title" placeholder="Title..."></td>
+                </tr>
+                <tr>
+                    <td>Author</td>
+                    <td><input asp-for="@Model.Author" placeholder="Author Name..."></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" asp-for="@Model.IsAvailable" id="isAvailable">
+                        <label for="isAvailable">Is Available</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="black-button" type="submit">Search</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    
+    <h3>List Of <span id="category-name">@ViewBag.CategoryName</span> Books</h3>
+    <a asp-action="Add" asp-route-categoryName="@ViewBag.CategoryName" class="black-button create-button">Add New @ViewBag.CategoryName Book</a>
+
+    <table class="data">
+        <thead>
+            <th>Action</th>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Is Borrowed</th>
+            <th>Release Date</th>
+            <th>Total Page</th>
+        </thead>
+        <tbody id="data-books">
+            @if(Model.Books.Count() == 0){
+                <th colspan="6"><span class="data-empty">Data Is Empty</span></th>
+            }
+            @foreach(var book in Model.Books){
+                <tr>
+                    <td>
+                        @if(@book.Summary != null){
+                            <a href="javascript:;" content="@book.Summary" class="black-button button-detail">Summary</a>
+                        }
+                        <a asp-action="Edit" 
+                            asp-route-categoryName="@ViewBag.CategoryName" 
+                            asp-route-code="@book.Code" 
+                            class="black-button button-edit">Edit
+                        </a>
+                        <a href="javascript:;" id="@book.Code" class="black-button button-delete">Delete</a>
+                    </td>
+                    <td>@book.Title</td>
+                    <td>@book.AuthorName</td>
+                    <td>@book.LoanStatus</td>
+                    <td>@book.ReleaseDate</td>
+                    <td>@book.TotalPage</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6">
+                    <div class="pagination">
+                        <span>Page @Model.Pagination.PageNumber of @Model.Pagination.TotalPages</span>
+                        <span>
+                            @for(int pageNumber=1; pageNumber<=Model.Pagination.TotalPages; pageNumber++){
+                                <a 
+                                    asp-action="Index" 
+                                    asp-route-categoryName="@ViewBag.CategoryName"
+                                    asp-route-isAvailable="@Model.IsAvailable"
+                                    asp-route-pageNumber="@pageNumber" 
+                                    asp-route-title="@Model.Title"
+                                    asp-route-author="@Model.Author"
+                                    class="number">@pageNumber
+                                </a>
+                            }
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</main>
+
+<div class="modal-layer">
+    <div class="popup-dialog">
+        <p id="summary-content"></p>
+        <div>
+            <button class="black-button close-button" type="button">Close</button>
+        </div>
+    </div>
+</div>
+
+<script src="~/scripts/book.js"></script>

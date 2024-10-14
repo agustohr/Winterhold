@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\1964\\Documents\\Framework Dotnet\\Winterhold\\src\\WinterholdWeb\\wwwroot\\scripts\\author.js",
+      "PackagePath": "staticwebassets\\scripts\\author.js"
+    },
+    {
+      "Id": "C:\\Users\\1964\\Documents\\Framework Dotnet\\Winterhold\\src\\WinterholdWeb\\wwwroot\\scripts\\book.js",
+      "PackagePath": "staticwebassets\\scripts\\book.js"
+    },
+    {
+      "Id": "C:\\Users\\1964\\Documents\\Framework Dotnet\\Winterhold\\src\\WinterholdWeb\\wwwroot\\scripts\\category.js",
+      "PackagePath": "staticwebassets\\scripts\\category.js"
+    },
+    {
+      "Id": "C:\\Users\\1964\\Documents\\Framework Dotnet\\Winterhold\\src\\WinterholdWeb\\wwwroot\\scripts\\customer.js",
+      "PackagePath": "staticwebassets\\scripts\\customer.js"
+    },
+    {
+      "Id": "C:\\Users\\1964\\Documents\\Framework Dotnet\\Winterhold\\src\\WinterholdWeb\\wwwroot\\scripts\\jquery-3.6.0.js",
+      "PackagePath": "staticwebassets\\scripts\\jquery-3.6.0.js"
+    },
+    {
+      "Id": "C:\\Users\\1964\\Documents\\Framework Dotnet\\Winterhold\\src\\WinterholdWeb\\wwwroot\\scripts\\jquery-3.6.0.min.js",
+      "PackagePath": "staticwebassets\\scripts\\jquery-3.6.0.min.js"
+    },
+    {
+      "Id": "C:\\Users\\1964\\Documents\\Framework Dotnet\\Winterhold\\src\\WinterholdWeb\\wwwroot\\scripts\\loan.js",
+      "PackagePath": "staticwebassets\\scripts\\loan.js"
+    },
+    {
+      "Id": "C:\\Users\\1964\\Documents\\Framework Dotnet\\Winterhold\\src\\WinterholdWeb\\wwwroot\\styles\\font-awesome.css",
+      "PackagePath": "staticwebassets\\styles\\font-awesome.css"
+    },
+    {
+      "Id": "C:\\Users\\1964\\Documents\\Framework Dotnet\\Winterhold\\src\\WinterholdWeb\\wwwroot\\styles\\normalize.css",
+      "PackagePath": "staticwebassets\\styles\\normalize.css"
+    },
+    {
+      "Id": "C:\\Users\\1964\\Documents\\Framework Dotnet\\Winterhold\\src\\WinterholdWeb\\wwwroot\\styles\\site.css",
+      "PackagePath": "staticwebassets\\styles\\site.css"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.WinterholdWeb.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.WinterholdWeb.props",
+      "PackagePath": "build\\WinterholdWeb.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.WinterholdWeb.props",
+      "PackagePath": "buildMultiTargeting\\WinterholdWeb.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.WinterholdWeb.props",
+      "PackagePath": "buildTransitive\\WinterholdWeb.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

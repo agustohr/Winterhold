@@ -1,0 +1,61 @@
+@model AuthorUpsertViewModel
+@{
+    ViewData["Title"] = "Author Upsert";
+}
+<main>
+    <div class="form-upsert">
+        <form method="post">
+            <table>
+                <tr>
+                    <td><label>Title *</label></td>
+                    <td>
+                        <input asp-for="@Model.Title">
+                        <span class="field-validation-error" asp-validation-for="@Model.Title"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>First Name *</label></td>
+                    <td>
+                        <input asp-for="@Model.FirstName">
+                        <span class="field-validation-error" asp-validation-for="@Model.FirstName"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Last Name</label></td>
+                    <td>
+                        <input asp-for="@Model.LastName">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Birth Date *</label></td>
+                    <td>
+                        <input type="date" asp-for="@Model.BirthDate">
+                        <span class="field-validation-error" asp-validation-for="@Model.BirthDate"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Decease Date</label></td>
+                    <td>
+                        <input type="date" asp-for="@Model.DeceasedDate">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Education</label></td>
+                    <td>
+                        <input asp-for="@Model.Education">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Summary</label></td>
+                    <td>
+                        <textarea asp-for="@Model.Summary"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <div class="foot-button">
+                <button type="submit">Submit</button>
+                <a class="black-button" asp-controller="Author" asp-action="Index">Back to Index</a>
+            </div>
+        </form>
+    </div>
+</main>

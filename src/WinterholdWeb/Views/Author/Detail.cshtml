@@ -1,0 +1,72 @@
+@model AuthorDetailViewModel
+@{
+    ViewData["Title"] = "Author Detail";
+}
+<main>
+    <a asp-action="Index" class="black-button">Back to Author Index</a>
+
+    <table class="detail">
+        <tr>
+            <td>Name</td>
+            <td>@Model.FullName</td>
+        </tr>
+        <tr>
+            <td>Birth Date</td>
+            <td>@Model.BirthDate</td>
+        </tr>
+        <tr>
+            <td>Decease Date</td>
+            <td>@Model.DeceasedDate</td>
+        </tr>
+        <tr>
+            <td>Education</td>
+            <td>@Model.Education</td>
+        </tr>
+        <tr>
+            <td>Summary</td>
+            <td>@Model.Summary</td>
+        </tr>
+    </table>
+
+    <table class="data">
+        <thead>
+            <th>Book Title</th>
+            <th>Category</th>
+            <th>Is Borrowed</th>
+            <th>Release Date</th>
+            <th>Total Page</th>
+        </thead>
+        <tbody>
+            @if(Model.Books.Count() == 0){
+                <th colspan="6"><span class="data-empty">Data Is Empty</span></th>
+            }
+            @foreach(var book in Model.Books){
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.CategoryName</td>
+                    <td>@book.LoanStatus</td>
+                    <td>@book.ReleaseDate</td>
+                    <td>@book.TotalPage</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">
+                    <div class="pagination">
+                        <span>page @Model.PaginationBooks.PageNumber of @Model.PaginationBooks.TotalPages</span>
+                        <span>
+                            @for(int pageNumber=1; pageNumber<=Model.PaginationBooks.TotalPages; pageNumber++){
+                                <a 
+                                    asp-action="Detail" 
+                                    asp-route-pageNumber="@pageNumber" 
+                                    class="number">@pageNumber
+                                </a>
+                            }
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</main>

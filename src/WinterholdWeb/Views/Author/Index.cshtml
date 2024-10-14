@@ -1,0 +1,64 @@
+@model AuthorIndexViewModel
+@{
+    ViewData["Title"] = "Author Index";
+}
+<main>
+    <div class="search">
+        <div>Search By</div>
+        <form method="get" class="filter" asp-action="Index">
+            <label for="">Name</label>
+            <input asp-for="@Model.AuthorName" placeholder="Author Name...">
+            <button class="black-button" type="submit">Search</button>
+        </form>
+    </div>
+    <a class="black-button create-button" asp-controller="Author" asp-action="Add">Add New Author</a>
+    <table class="data">
+        <thead>
+            <th>Action</th>
+            <th>Full Name</th>
+            <th>Age</th>
+            <th>Status</th>
+            <th>Education</th>
+        </thead>
+        <tbody class="data-author">
+            @if(Model.Authors.Count() == 0){
+                <th colspan="6"><span class="data-empty">Data Is Empty</span></th>
+            }
+            @foreach(var author in Model.Authors){
+                <tr>
+                    <td>
+                        <a class="black-button button-detail" asp-action="Detail" asp-route-id="@author.Id">Books</a>
+                        <a class="black-button button-edit" asp-action="Edit" asp-route-id="@author.Id">Edit</a>
+                        <a href="javascript:;" class="black-button button-delete" id="@author.Id">Delete</a>
+                    </td>
+                    <td>@author.FullName</td>
+                    <td>@author.Age</td>
+                    @{string status = author.IsDeceased ? "Deceased" : "Alive";}
+                    <td>@status</td>
+                    <td>@author.Education</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">
+                    <div class="pagination">
+                        <span>Page @Model.Pagination.PageNumber of @Model.Pagination.TotalPages</span>
+                        <span>
+                            @for(int pageNumber=1; pageNumber<=Model.Pagination.TotalPages; pageNumber++){
+                                <a 
+                                    asp-action="Index" 
+                                    asp-route-pageNumber="@pageNumber" 
+                                    asp-route-authorName="@Model.AuthorName"
+                                    class="number">@pageNumber
+                                </a>
+                            }
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</main>
+
+<script src="~/scripts/author.js"></script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Winterhold - @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/styles/normalize.css" />
+    <link rel="stylesheet" href="~/styles/font-awesome.css" />
+    <link rel="stylesheet" href="~/styles/site.css" />
+    <script src="~/scripts/jquery-3.6.0.js"></script>
+</head>
+<body class="main-body">
+    <partial name="_Navigation">
+    <div class="loading">
+        <svg viewBox="25 25 50 50" hidden>
+            <circle r="20" cy="50" cx="50"></circle>
+        </svg>
+    </div>
+    @RenderBody()
+    
+</body>
+</html>

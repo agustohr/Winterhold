@@ -1,0 +1,114 @@
+@model CustomerIndexViewModel
+@{
+    ViewData["Title"] = "Customer Index";
+}
+<main>
+    <div class="search">
+        <div>Search By</div>
+        <form method="get" asp-action="Index">
+            <table>
+                <tr>
+                    <td>Number</td>
+                    <td><input asp-for="@Model.MemberNumber" placeholder="Membership Number..."></td>
+                </tr>
+                <tr>
+                    <td>Author</td>
+                    <td><input asp-for="@Model.FullName" placeholder="Full Name..."></td>
+                </tr>
+            </table>
+            <div>
+                <input type="checkbox" asp-for="@Model.IsExpired" id="isExpired">
+                <label for="isExpired">Membership Already Expired</label>
+            </div>
+            <div>
+                <button class="black-button" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+    
+    <a asp-action="Add" class="black-button create-button">Add New Customer</a>
+
+    <table class="data">
+        <thead>
+            <th>Action</th>
+            <th>Membership Number</th>
+            <th>Full Name</th>
+            <th>Expired Date</th>
+        </thead>
+        <tbody id="data-customers">
+            @if(Model.Customers.Count() == 0){
+                <th colspan="6"><span class="data-empty">Data Is Empty</span></th>
+            }
+            @foreach(var customer in Model.Customers){
+                <tr>
+                    <td>
+                        <a asp-action="Edit" asp-route-memberNumber="@customer.MembershipNumber" class="black-button edit-button">Edit</a>
+                        <a href="javascript:;" id="@customer.MembershipNumber" class="black-button delete-button">Delete</a>
+                        <a href="javascript:;" id="@customer.MembershipNumber" class="black-button extend-button">Extend</a>
+                    </td>
+                    <td><a href="javascript:;" class="membership-number">@customer.MembershipNumber</a></td>
+                    <td>@customer.FullName</td>
+                    <td>@customer.MembershipExpireDate</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">
+                    <div class="pagination">
+                        <span>Page @Model.Pagination.PageNumber of @Model.Pagination.TotalPages</span>
+                        <span>
+                            @for(int pageNumber=1; pageNumber<=Model.Pagination.TotalPages; pageNumber++){
+                                <a 
+                                    asp-action="Index" 
+                                    asp-route-isExpired="@Model.IsExpired"
+                                    asp-route-pageNumber="@pageNumber" 
+                                    asp-route-memberNumber="@Model.MemberNumber"
+                                    asp-route-fullName="@Model.FullName"
+                                    class="number">@pageNumber
+                                </a>
+                            }
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</main>
+
+<div class="modal-layer">
+    <div class="popup-dialog">
+        <table>
+            <tr>
+                <td>Membership Number</td>
+                <td><span id="member-number"></span></td>
+            </tr>
+            <tr>
+                <td>Full Name</td>
+                <td><span id="fullname"></span></td>
+            </tr>
+            <tr>
+                <td>Birth Date</td>
+                <td><span id="birthdate"></span></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><span id="gender"></span></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><span id="phone"></span></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><span id="address"></span></td>
+            </tr>
+            <tr>
+                <td><button class="black-button close-button" type="button">Close</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script src="~/scripts/customer.js"></script>

@@ -1,0 +1,71 @@
+@model BookUpsertViewModel
+@{
+    ViewData["Title"] = "Books Upsert";
+}
+<main>
+    <div class="form-upsert">
+        <form method="post" asp-route-categoryName="@ViewBag.CategoryName">
+            <table>
+                <tr>
+                    <td><label>Code *</label></td>
+                    <td>
+                        @if(@Model.BookCode == null){
+                            <input asp-for="@Model.BookCode">
+                        }else{
+                            <input type="text" value="@Model.BookCode" disabled>
+                            <input type="hidden" name="BookCode" value="-">
+                        }
+                        <span class="field-validation-error" asp-validation-for="@Model.BookCode"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Title *</label></td>
+                    <td>
+                        <input asp-for="@Model.Title">
+                        <span class="field-validation-error" asp-validation-for="@Model.Title"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Category</label></td>
+                    <td>
+                        <span class="field-catgeory">@ViewBag.CategoryName</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Author *</label></td>
+                    <td>
+                        <select asp-for="@Model.AuthorId">
+                            <option value=0>No Specific Category</option>
+                            @foreach(var author in Model.Authors){
+                                <option value=@author.Value>@author.Text</option>
+                            }
+                        </select>
+                        <span class="field-validation-error" asp-validation-for="@Model.AuthorId"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Release Date</label></td>
+                    <td>
+                        <input type="date" asp-for="@Model.ReleaseDate">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Total Page</label></td>
+                    <td>
+                        <input asp-for="@Model.TotalPage">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Summary</label></td>
+                    <td>
+                        <textarea asp-for="@Model.Summary"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <div class="foot-button">
+                <button type="submit">Submit</button>
+                <a class="black-button" asp-action="Index" asp-route-categoryName="@ViewBag.CategoryName">Back to Index</a>
+            </div>
+        </form>
+    </div>
+</main>

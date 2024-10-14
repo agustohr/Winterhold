@@ -1,0 +1,199 @@
+@model LoanIndexViewModal
+@{
+    ViewData["Title"] = "Loan Index";
+}
+<main>
+    <div class="search">
+        <div>Search By</div>
+        <form method="get" asp-action="Index">
+            <table>
+                <tr>
+                    <td>Book Title</td>
+                    <td><input asp-for="@Model.BookTitle" placeholder="Book Title..."></td>
+                </tr>
+                <tr>
+                    <td>Customer Name</td>
+                    <td><input asp-for="@Model.CustomerName" placeholder="Customer Name..."></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" asp-for="@Model.IsPassed" id="isPassed">
+                        <label for="isPassed">Passed Due Date</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="black-button" type="submit">Search</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    
+    <a href="javascript:;" class="black-button add-button">Add New Loan</a>
+
+    <table class="data">
+        <thead>
+            <th>Action</th>
+            <th>Book Title</th>
+            <th>Customer Name</th>
+            <th>Loan Date</th>
+            <th>Due Date</th>
+            <th>Return Date</th>
+        </thead>
+        <tbody id="data-loans">
+            @if(Model.Loans.Count() == 0){
+                <th colspan="6"><span class="data-empty">Data Is Empty</span></th>
+            }
+            @foreach(var loan in Model.Loans){
+                <tr>
+                    <td>
+                        <a href="javascript:;" id="@loan.Id" class="black-button detail-button">Detail</a>
+                        @if(loan.ReturnDate == ""){
+                            <a href="javascript:;" id="@loan.Id" class="black-button edit-button">Edit</a>
+                            <a href="javascript:;" id="@loan.Id" class="black-button return-button">Return</a>
+                        }
+                    </td>
+                    <td>@loan.BookTitle</td>
+                    <td>@loan.CustomerName</td>
+                    <td>@loan.LoanDate</td>
+                    <td>@loan.DueDate</td>
+                    <td>@loan.ReturnDate</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6">
+                    <div class="pagination">
+                        <span>Page @Model.Pagination.PageNumber of @Model.Pagination.TotalPages</span>
+                        <span>
+                            @for(int pageNumber=1; pageNumber<=Model.Pagination.TotalPages; pageNumber++){
+                                <a 
+                                    asp-action="Index" 
+                                    asp-route-pageNumber="@pageNumber" 
+                                    asp-route-bookTitle="@Model.BookTitle"
+                                    asp-route-customerName="@Model.CustomerName"
+                                    asp-route-isPassed="@Model.IsPassed"
+                                    class="number">@pageNumber
+                                </a>
+                            }
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</main>
+
+<div class="modal-layer modal-upsert">
+    <div class="popup-dialog popup-upsert">
+        <div class="form-upsert">
+            <form id="upsert-loan">
+                <table>      
+                    <tr>
+                        <td><label>Customer *</label></td>
+                        <td>
+                            <select name="customer" required>
+
+                            </select>
+                            <div class="field-validation-error"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Book *</label></td>
+                        <td>
+                            <select name="book" required>
+
+                            </select>
+                            <div class="field-validation-error"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Loan Date *</label></td>
+                        <td>
+                            <input type="date" name="loan-date">
+                            <div class="field-validation-error"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Note</label></td>
+                        <td>
+                            <textarea name="note"></textarea>
+                            <div class="field-validation-error"></div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="foot-button">
+                    <button class="black-button submit-button" type="submit">Submit</button>
+                    <button class="black-button close-button-upsert" type="button">Close</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal-layer modal-detail">
+    <div class="popup-dialog popup-detail">
+        <div class="content">
+            <div class="content-book">
+                <table class="detail">
+                    <tr>
+                        <td>Book</td>
+                    </tr>
+                    <tr>
+                        <td>Title</td>
+                        <td><span id="detail-title"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Category</td>
+                        <td><span id="detail-category"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Author</td>
+                        <td><span id="detail-author"></span></td>
+                    </tr>
+                    <tr>
+                        <td>FLoor</td>
+                        <td><span id="detail-floor"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Isle</td>
+                        <td><span id="detail-isle"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Bay</td>
+                        <td><span id="detail-bay"></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="content-customer">
+                <table class="detail">
+                    <tr>
+                        <td>Customer</td>
+                    </tr>
+                    <tr>
+                        <td>Membership Number</td>
+                        <td><span id="detail-membernumber"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Full Name</td>
+                        <td><span id="detail-fullname"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td><span id="detail-phone"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Membership Expired Date</td>
+                        <td><span id="detail-expiredate"></span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="foot">
+            <button class="black-button close-button-detail" type="button">Close</button>
+        </div>
+    </div>
+</div>
+
+<script src="~/scripts/loan.js"></script>

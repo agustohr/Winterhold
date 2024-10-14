@@ -1,0 +1,15 @@
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdBusiness\bin\Debug\net6.0\WinterholdBusiness.deps.json
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdBusiness\bin\Debug\net6.0\WinterholdBusiness.dll
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdBusiness\bin\Debug\net6.0\WinterholdBusiness.pdb
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdBusiness\bin\Debug\net6.0\WinterholdDataAccess.dll
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdBusiness\bin\Debug\net6.0\WinterholdDataAccess.pdb
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdBusiness\obj\Debug\net6.0\WinterholdBusiness.csproj.AssemblyReference.cache
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdBusiness\obj\Debug\net6.0\WinterholdBusiness.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdBusiness\obj\Debug\net6.0\WinterholdBusiness.AssemblyInfoInputs.cache
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdBusiness\obj\Debug\net6.0\WinterholdBusiness.AssemblyInfo.cs
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdBusiness\obj\Debug\net6.0\WinterholdBusiness.csproj.CoreCompileInputs.cache
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdBusiness\obj\Debug\net6.0\WinterholdBusiness.csproj.CopyComplete
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdBusiness\obj\Debug\net6.0\WinterholdBusiness.dll
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdBusiness\obj\Debug\net6.0\refint\WinterholdBusiness.dll
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdBusiness\obj\Debug\net6.0\WinterholdBusiness.pdb
+C:\Users\1964\Documents\Framework Dotnet\Winterhold\src\WinterholdBusiness\obj\Debug\net6.0\ref\WinterholdBusiness.dll
